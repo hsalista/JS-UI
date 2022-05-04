@@ -140,6 +140,10 @@ describe('Product Store', () => {
         let productInCart = $('//tr[@class="success"]');
         await productInCart.waitForDisplayed();
         await browser.pause(2000);
+        
+        const text = await $$('#tbodyid')[0];
+        console.log(await text.$$('tr')[1].$('td').getText());
+        return expect(getText()).toEqual('Nokia lumia 1520');
 
     });
 
